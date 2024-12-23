@@ -1,0 +1,684 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Файлы и ресурсы</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1654328a-5ccc-80cf-ac2a-c632ae41f387" class="page sans"><header><h1 class="page-title">Файлы и ресурсы</h1><p class="page-description"></p></header><div class="page-body"><p id="1654328a-5ccc-80bc-9eab-e9f54a184177" class="">Здесь собраны все важные материалы для проекта, чтобы команда могла быстро найти нужную информацию.</p><hr id="1654328a-5ccc-80a5-b0b7-fa72675e85d4"/><h2 id="1654328a-5ccc-803a-a105-d177c686055a" class=""><strong>1. Дизайн</strong></h2><h3 id="1654328a-5ccc-80a5-ab48-f13cd25960a2" class=""><strong>1.1 Прототипы и интерфейсы</strong></h3><ul id="1654328a-5ccc-806a-8d7e-e09775ecfea6" class="bulleted-list"><li style="list-style-type:disc"><strong>Figma проект</strong>:<p id="1654328a-5ccc-80b4-b3d3-c854af94e19b" class=""><a href="https://www.figma.com/">Ссылка на дизайн интерфейса бота и сайта</a></p><p id="1654328a-5ccc-8006-b83a-dc28a4d80ed0" class=""><strong>Содержит</strong>:</p><ul id="1654328a-5ccc-803b-9630-d922ad09bb30" class="bulleted-list"><li style="list-style-type:circle">Логотип.</li></ul><ul id="1654328a-5ccc-8071-b872-d6124d489c48" class="bulleted-list"><li style="list-style-type:circle">Прототип бота (экраны приветствия, теста, рекомендаций).</li></ul><ul id="1654328a-5ccc-80bc-8492-d539ae2c6688" class="bulleted-list"><li style="list-style-type:circle">Прототип сайта-визитки.</li></ul></li></ul><h3 id="1654328a-5ccc-8043-861c-e6a36c3e4d68" class=""><strong>1.2 UI Kit</strong></h3><ul id="1654328a-5ccc-80df-a5f1-df277c4f3e26" class="bulleted-list"><li style="list-style-type:disc"><strong>Figma UI Kit</strong>:<p id="1654328a-5ccc-80a0-8024-e8cd327c005b" class=""><a href="https://www.figma.com/">Ссылка на набор элементов интерфейса</a></p><p id="1654328a-5ccc-800a-833e-c01053ae8dff" class=""><strong>Содержит</strong>:</p><ul id="1654328a-5ccc-80c2-b7c4-e913bb928c4b" class="bulleted-list"><li style="list-style-type:circle">Кнопки, карточки, иконки, цветовая палитра.</li></ul></li></ul><hr id="1654328a-5ccc-803a-8c10-f6395954a992"/><h2 id="1654328a-5ccc-8034-a59e-e43bdf505cbc" class=""><strong>2. Презентации</strong></h2><h3 id="1654328a-5ccc-80c8-abbb-ec77e28ffdf7" class=""><strong>2.1 Презентация проекта</strong></h3><ul id="1654328a-5ccc-8093-878e-f01ff36cc6e9" class="bulleted-list"><li style="list-style-type:disc"><strong>Google Slides/Canva</strong>:<p id="1654328a-5ccc-80ad-baf6-df3007b1d05d" class=""><a href="https://www.canva.com/">Ссылка на презентацию проекта</a></p><p id="1654328a-5ccc-8007-ba61-de82113ee346" class=""><strong>Содержит</strong>:</p><ul id="1654328a-5ccc-8079-bd13-c15b6e105bf3" class="bulleted-list"><li style="list-style-type:circle">Цели и задачи.</li></ul><ul id="1654328a-5ccc-8011-9ff9-c44f03ba9169" class="bulleted-list"><li style="list-style-type:circle">Пользовательские сценарии.</li></ul><ul id="1654328a-5ccc-8065-90fa-ed5f75bcf91f" class="bulleted-list"><li style="list-style-type:circle">Примеры интерфейса.</li></ul><ul id="1654328a-5ccc-809f-a0f1-fef1eed0aad0" class="bulleted-list"><li style="list-style-type:circle">Потенциальные выгоды для бизнеса.</li></ul></li></ul><h3 id="1654328a-5ccc-8037-bcc2-d55871b1559c" class=""><strong>2.2 Учебные материалы</strong></h3><ul id="1654328a-5ccc-80e6-bad3-c9fc65f57521" class="bulleted-list"><li style="list-style-type:disc"><strong>Презентация для клиентов</strong>:<p id="1654328a-5ccc-80d2-9b1a-d2628f2a7578" class=""><a href="https://www.google.com/">Ссылка на обучающую презентацию для пользователей</a></p><p id="1654328a-5ccc-809a-9935-cb5a99b5872c" class=""><strong>Содержит</strong>:</p><ul id="1654328a-5ccc-80f2-88ac-e7c7d00650b6" class="bulleted-list"><li style="list-style-type:circle">Как пользоваться ботом.</li></ul><ul id="1654328a-5ccc-8091-8229-fd7307ab174d" class="bulleted-list"><li style="list-style-type:circle">Советы по использованию рекомендаций.</li></ul></li></ul><hr id="1654328a-5ccc-80f3-8779-c729c6b63bc7"/><h2 id="1654328a-5ccc-80ab-ba5f-ca0b9df208aa" class=""><strong>3. API</strong></h2><h3 id="1654328a-5ccc-80a3-b185-cc90d17fc647" class=""><strong>3.1 Используемые API</strong></h3><ol type="1" id="1654328a-5ccc-806e-b973-dcc072694177" class="numbered-list" start="1"><li><strong>OpenAI GPT API</strong>:<p id="1654328a-5ccc-800d-92af-c89ef71054c9" class=""><a href="https://platform.openai.com/docs/">Документация</a></p><p id="1654328a-5ccc-809f-bb15-fce675c469eb" class=""><strong>Описание</strong>: Для анализа текста и генерации тегов.</p></li></ol><ol type="1" id="1654328a-5ccc-8043-af11-f330c9ddba21" class="numbered-list" start="2"><li><strong>Spoonacular API</strong> (для рекомендаций по питанию):<p id="1654328a-5ccc-80a5-bdae-f7010ffc6af1" class=""><a href="https://spoonacular.com/food-api">Документация</a></p><p id="1654328a-5ccc-80a2-9a44-d392087c0779" class=""><strong>Описание</strong>: Для получения данных о рецептах и продуктах.</p></li></ol><ol type="1" id="1654328a-5ccc-8094-879f-eb1f440618cb" class="numbered-list" start="3"><li><strong>GoodReads API</strong> (для книг):<p id="1654328a-5ccc-80cc-88fa-fdda050b4f13" class=""><a href="https://www.goodreads.com/api">Документация</a></p><p id="1654328a-5ccc-80b8-b057-fc2c2d9f797a" class=""><strong>Описание</strong>: Для рекомендаций книг.</p></li></ol><ol type="1" id="1654328a-5ccc-80d0-9de0-dbb456186a4e" class="numbered-list" start="4"><li><strong>Telegram Bot API</strong>:<p id="1654328a-5ccc-80bd-a27d-c694aedb36e7" class=""><a href="https://core.telegram.org/bots/api">Документация</a></p><p id="1654328a-5ccc-80d8-b8b9-d6b77e236c9a" class=""><strong>Описание</strong>: Для создания и управления ботом в Telegram.</p></li></ol><hr id="1654328a-5ccc-80a8-b3b3-d5a9b3f845ed"/><h2 id="1654328a-5ccc-80a3-ad27-c968c13ce958" class=""><strong>4. Документация</strong></h2><h3 id="1654328a-5ccc-80be-af7a-f065216a2360" class=""><strong>4.1 Внутренняя документация</strong></h3><ul id="1654328a-5ccc-8006-8596-f95e31322afe" class="bulleted-list"><li style="list-style-type:disc"><strong>Документация по проекту</strong>:<p id="1654328a-5ccc-80c0-9c1c-e3e555242b06" class=""><a href="https://docs.google.com/">Ссылка на Google Docs</a></p><p id="1654328a-5ccc-8034-ab38-e15b321ff85c" class=""><strong>Содержит</strong>:</p><ul id="1654328a-5ccc-80f3-a9bb-fe337540aff7" class="bulleted-list"><li style="list-style-type:circle">Пользовательские сценарии.</li></ul><ul id="1654328a-5ccc-8000-ba25-c33b23c3147c" class="bulleted-list"><li style="list-style-type:circle">Структура базы данных.</li></ul><ul id="1654328a-5ccc-8097-b60f-edd9bdbf5d6b" class="bulleted-list"><li style="list-style-type:circle">Технические детали.</li></ul></li></ul><h3 id="1654328a-5ccc-8046-a2a9-ec65049bf770" class=""><strong>4.2 Чек-листы тестирования</strong></h3><ul id="1654328a-5ccc-808a-8b24-f9dfe730ead6" class="bulleted-list"><li style="list-style-type:disc"><strong>Чек-лист тестирования</strong>:<p id="1654328a-5ccc-809a-af10-df18726e97b8" class=""><a href="https://docs.google.com/">Ссылка на чек-лист</a></p><p id="1654328a-5ccc-80ff-b857-d59fad9b0227" class=""><strong>Содержит</strong>:</p><ul id="1654328a-5ccc-8012-b23a-cd9bf27011a7" class="bulleted-list"><li style="list-style-type:circle">Проверяемые элементы.</li></ul><ul id="1654328a-5ccc-807c-a744-efa20d532acb" class="bulleted-list"><li style="list-style-type:circle">Ожидаемые результаты.</li></ul></li></ul><hr id="1654328a-5ccc-80c5-9622-f143fba3495b"/><h2 id="1654328a-5ccc-8094-a510-cf1c92fdd20b" class=""><strong>5. Исходный код</strong></h2><h3 id="1654328a-5ccc-8098-9ef2-cf0a357d93d4" class=""><strong>5.1 Репозитории</strong></h3><ul id="1654328a-5ccc-8024-9bd3-cb18927d2223" class="bulleted-list"><li style="list-style-type:disc"><strong>Backend</strong>:<p id="1654328a-5ccc-80dc-9752-ead7c3c92db2" class=""><a href="https://github.com/">GitHub репозиторий</a></p><p id="1654328a-5ccc-802c-b3a7-df2317e054ef" class=""><strong>Содержит</strong>:</p><ul id="1654328a-5ccc-804d-84f9-cadda12bcbe9" class="bulleted-list"><li style="list-style-type:circle">Код базы данных.</li></ul><ul id="1654328a-5ccc-805d-8472-d5df4fa940db" class="bulleted-list"><li style="list-style-type:circle">Логика работы бота.</li></ul></li></ul><ul id="1654328a-5ccc-8077-8071-fc09684ddc21" class="bulleted-list"><li style="list-style-type:disc"><strong>Frontend</strong>:<p id="1654328a-5ccc-80f4-8f74-d2f0a25ac33f" class=""><a href="https://github.com/">GitHub репозиторий</a></p><p id="1654328a-5ccc-8077-b24a-dfe2d7f0743b" class=""><strong>Содержит</strong>:</p><ul id="1654328a-5ccc-8032-aa06-e1644f64a150" class="bulleted-list"><li style="list-style-type:circle">Сайт-визитку.</li></ul><ul id="1654328a-5ccc-8060-b7c9-d0efe1d7a919" class="bulleted-list"><li style="list-style-type:circle">Интеграцию с backend.</li></ul></li></ul><hr id="1654328a-5ccc-80a2-9136-cd6fb55773f6"/><h2 id="1654328a-5ccc-8040-bba3-ef2e8a2903c7" class=""><strong>6. Дополнительные материалы</strong></h2><h3 id="1654328a-5ccc-8092-ae2c-f27cceff32c9" class=""><strong>6.1 Полезные ссылки</strong></h3><ul id="1654328a-5ccc-8028-9c21-c5df0c3c871b" class="bulleted-list"><li style="list-style-type:disc"><strong>Инструменты разработки</strong>:<ul id="1654328a-5ccc-807e-a929-df208bf5662b" class="bulleted-list"><li style="list-style-type:circle"><a href="https://www.figma.com/">Figma</a>: Для дизайна.</li></ul><ul id="1654328a-5ccc-802b-9e08-c7871535c98b" class="bulleted-list"><li style="list-style-type:circle"><a href="https://www.notion.so/">Notion</a>: Для управления проектом.</li></ul><ul id="1654328a-5ccc-8041-abee-fa5e067e4fdc" class="bulleted-list"><li style="list-style-type:circle"><a href="https://trello.com/">Trello/Jira</a>: Для отслеживания задач.</li></ul></li></ul><ul id="1654328a-5ccc-804d-9d0b-d7b998bd39d4" class="bulleted-list"><li style="list-style-type:disc"><strong>Референсы и вдохновение</strong>:<ul id="1654328a-5ccc-80d1-87d9-d5aedb73b26e" class="bulleted-list"><li style="list-style-type:circle"><a href="https://www.chatbots.org/">Примеры успешных ботов</a>.</li></ul><ul id="1654328a-5ccc-80a1-9a5f-d8e82e25be06" class="bulleted-list"><li style="list-style-type:circle"><a href="https://uxdesign.cc/">Статьи о UX дизайне</a>.</li></ul></li></ul></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

@@ -1,0 +1,684 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Документация</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1654328a-5ccc-80c4-8c63-f8142acbfb68" class="page sans"><header><h1 class="page-title">Документация</h1><p class="page-description"></p></header><div class="page-body"><h2 id="1654328a-5ccc-80fe-bea8-dc1f3f13de2b" class=""><strong>1. Пользовательские сценарии</strong></h2><h3 id="1654328a-5ccc-80d2-baa4-dbdf25bdf59a" class=""><strong>1.1 Первый вход пользователя</strong></h3><ol type="1" id="1654328a-5ccc-8065-a84f-fa57dd44c434" class="numbered-list" start="1"><li>Пользователь запускает бот (в Telegram или на сайте).</li></ol><ol type="1" id="1654328a-5ccc-80fb-879f-dbea9d166e7e" class="numbered-list" start="2"><li>Бот приветствует пользователя и предлагает выбрать сферу:<ul id="1654328a-5ccc-8073-adce-f2bbbfa5ea48" class="bulleted-list"><li style="list-style-type:disc">Спорт и фитнес</li></ul><ul id="1654328a-5ccc-80a9-b6f3-c3d11c25605a" class="bulleted-list"><li style="list-style-type:disc">Саморазвитие и психология</li></ul><ul id="1654328a-5ccc-80bd-8d1e-e748ad93cb85" class="bulleted-list"><li style="list-style-type:disc">Правильное питание и сон</li></ul></li></ol><ol type="1" id="1654328a-5ccc-8021-9ff0-d4dce81d9f27" class="numbered-list" start="3"><li>Пользователь выбирает сферу.</li></ol><ol type="1" id="1654328a-5ccc-80bf-9eec-dc6bad505651" class="numbered-list" start="4"><li>Бот предлагает пройти тест (5–10 вопросов):<ul id="1654328a-5ccc-80f5-bd8f-d7658d8b6678" class="bulleted-list"><li style="list-style-type:disc">Например: &quot;Сколько часов вы обычно спите?&quot;</li></ul></li></ol><ol type="1" id="1654328a-5ccc-80b6-860b-e53396b6ad55" class="numbered-list" start="5"><li>По итогам теста бот генерирует список тегов и персонализирует рекомендации.</li></ol><ol type="1" id="1654328a-5ccc-807f-b688-fb940d133d06" class="numbered-list" start="6"><li>Пользователь описывает свою проблему или цель в текстовом поле.</li></ol><ol type="1" id="1654328a-5ccc-809c-a866-d9611766f4b9" class="numbered-list" start="7"><li>Бот анализирует текст, сопоставляет с тегами и выводит подборку ресурсов:<ul id="1654328a-5ccc-808f-beb1-f519bf365bcf" class="bulleted-list"><li style="list-style-type:disc">Статьи, книги, приложения, товары с описанием и ссылками.</li></ul></li></ol><hr id="1654328a-5ccc-801e-9781-f169ba90be8f"/><h3 id="1654328a-5ccc-8063-90fe-d0dcc69c94b9" class=""><strong>1.2 Регулярное взаимодействие</strong></h3><ol type="1" id="1654328a-5ccc-8057-8926-f393cf2d7d77" class="numbered-list" start="1"><li>Пользователь возвращается в бот.</li></ol><ol type="1" id="1654328a-5ccc-80b5-9b1e-e2e20be27847" class="numbered-list" start="2"><li>Бот предлагает выбрать:<ul id="1654328a-5ccc-8062-b8fa-e3879d895cbe" class="bulleted-list"><li style="list-style-type:disc">Получить новые рекомендации.</li></ul><ul id="1654328a-5ccc-8035-8142-ed7ec20224b6" class="bulleted-list"><li style="list-style-type:disc">Просмотреть предыдущие рекомендации.</li></ul><ul id="1654328a-5ccc-807e-9c15-f1270604151b" class="bulleted-list"><li style="list-style-type:disc">Пройти новый тест.</li></ul></li></ol><ol type="1" id="1654328a-5ccc-8095-9524-f55f7b2af45a" class="numbered-list" start="3"><li>Пользователь взаимодействует с выбранным разделом.</li></ol><hr id="1654328a-5ccc-8064-87f2-cbe23f255327"/><h3 id="1654328a-5ccc-809f-a13b-faf2e6ed0ea8" class=""><strong>1.3 Пример сценария взаимодействия</strong></h3><p id="1654328a-5ccc-80c0-877d-d17cda9db8f4" class=""><strong>Цель пользователя</strong>: Улучшить качество сна.</p><p id="1654328a-5ccc-806c-88d6-df043f671d47" class=""><strong>Сценарий</strong>:</p><ol type="1" id="1654328a-5ccc-80fb-89bc-d77332569f6a" class="numbered-list" start="1"><li>Бот: &quot;Привет! Как я могу вам помочь сегодня?&quot;</li></ol><ol type="1" id="1654328a-5ccc-8025-984c-ce80234a8ef6" class="numbered-list" start="2"><li>Пользователь: &quot;Я плохо сплю.&quot;</li></ol><ol type="1" id="1654328a-5ccc-80d0-8409-d0e3f6ea6d0f" class="numbered-list" start="3"><li>Бот:<ul id="1654328a-5ccc-804b-97d3-cb97923ceaf9" class="bulleted-list"><li style="list-style-type:disc">Предлагает пройти тест: &quot;Сколько часов вы обычно спите?&quot;</li></ul><ul id="1654328a-5ccc-80d6-9e68-dc671b35f2d7" class="bulleted-list"><li style="list-style-type:disc">Анализирует ответ и предлагает:<ul id="1654328a-5ccc-8045-a152-df1e588949fd" class="bulleted-list"><li style="list-style-type:circle">Статью: &quot;5 советов для улучшения сна&quot;.</li></ul><ul id="1654328a-5ccc-808e-a354-f1698d78c45f" class="bulleted-list"><li style="list-style-type:circle">Приложение: &quot;Calm — для медитаций перед сном&quot;.</li></ul><ul id="1654328a-5ccc-803c-9948-f99af8cf6834" class="bulleted-list"><li style="list-style-type:circle">Товар: &quot;Маска для сна&quot;.</li></ul></li></ul></li></ol><hr id="1654328a-5ccc-8055-9bb8-c10027d9d587"/><h2 id="1654328a-5ccc-80be-9485-d621fc7d65a6" class=""><strong>2. Структура базы данных</strong></h2><h3 id="1654328a-5ccc-80e6-a634-e58dd956909f" class=""><strong>2.1 Таблицы</strong></h3><h3 id="1654328a-5ccc-8019-b002-f2782a47b3c6" class=""><strong>Таблица: Users (пользователи)</strong></h3><table id="1654328a-5ccc-806e-a6cf-cb9a1c28e05f" class="simple-table"><tbody><tr id="1654328a-5ccc-805c-83d7-e75cf6c9e1a1"><td id="t]xv" class=""><strong>Поле</strong></td><td id="HfCj" class=""><strong>Тип</strong></td><td id=":O{f" class=""><strong>Описание</strong></td></tr><tr id="1654328a-5ccc-806f-9eac-cfa46bba4405"><td id="t]xv" class=""><code>id</code></td><td id="HfCj" class="">INTEGER</td><td id=":O{f" class="">Уникальный идентификатор пользователя.</td></tr><tr id="1654328a-5ccc-8098-87f4-db128c5bf183"><td id="t]xv" class=""><code>username</code></td><td id="HfCj" class="">TEXT</td><td id=":O{f" class="">Имя пользователя или никнейм.</td></tr><tr id="1654328a-5ccc-8087-b15a-ce35c7a3bfc2"><td id="t]xv" class=""><code>preferences</code></td><td id="HfCj" class="">TEXT (JSON)</td><td id=":O{f" class="">Предпочтения (список тегов).</td></tr><tr id="1654328a-5ccc-806a-a228-e8a25d01d42c"><td id="t]xv" class=""><code>last_interaction</code></td><td id="HfCj" class="">DATETIME</td><td id=":O{f" class="">Дата последнего взаимодействия.</td></tr></tbody></table><h3 id="1654328a-5ccc-80b8-87d6-e9be6a0bcb3d" class=""><strong>Таблица: Resources (ресурсы)</strong></h3><table id="1654328a-5ccc-8070-967b-f311be3909d7" class="simple-table"><tbody><tr id="1654328a-5ccc-80a9-9148-c427fed69fff"><td id="cRMS" class=""><strong>Поле</strong></td><td id="fDF@" class=""><strong>Тип</strong></td><td id="JEGE" class=""><strong>Описание</strong></td></tr><tr id="1654328a-5ccc-80e4-9403-fdb9209156bf"><td id="cRMS" class=""><code>id</code></td><td id="fDF@" class="">INTEGER</td><td id="JEGE" class="">Уникальный идентификатор ресурса.</td></tr><tr id="1654328a-5ccc-8017-b78a-dd334399253a"><td id="cRMS" class=""><code>title</code></td><td id="fDF@" class="">TEXT</td><td id="JEGE" class="">Название ресурса (книга, статья, товар).</td></tr><tr id="1654328a-5ccc-80bb-a094-f74616020e1f"><td id="cRMS" class=""><code>type</code></td><td id="fDF@" class="">TEXT</td><td id="JEGE" class="">Тип: книга, статья, приложение и т. д.</td></tr><tr id="1654328a-5ccc-809b-a443-cfe034ff7d41"><td id="cRMS" class=""><code>tags</code></td><td id="fDF@" class="">TEXT (JSON)</td><td id="JEGE" class="">Теги для классификации.</td></tr><tr id="1654328a-5ccc-80ce-848a-d236310dab8a"><td id="cRMS" class=""><code>description</code></td><td id="fDF@" class="">TEXT</td><td id="JEGE" class="">Описание ресурса.</td></tr><tr id="1654328a-5ccc-80f0-88a7-c5160bfb2858"><td id="cRMS" class=""><code>url</code></td><td id="fDF@" class="">TEXT</td><td id="JEGE" class="">Ссылка на ресурс.</td></tr><tr id="1654328a-5ccc-803d-b4b7-d478a9e59b2a"><td id="cRMS" class=""><code>price</code></td><td id="fDF@" class="">DECIMAL</td><td id="JEGE" class="">Цена (если применимо).</td></tr></tbody></table><h3 id="1654328a-5ccc-805d-8e59-e403affd00cd" class=""><strong>Таблица: User_Interactions (история взаимодействий)</strong></h3><table id="1654328a-5ccc-80f1-a1e1-f201b2dba0ae" class="simple-table"><tbody><tr id="1654328a-5ccc-8035-9795-fabcbc36c8c2"><td id="LB[O" class=""><strong>Поле</strong></td><td id="Sr]e" class=""><strong>Тип</strong></td><td id="DOWH" class=""><strong>Описание</strong></td></tr><tr id="1654328a-5ccc-80e6-8480-d36979ddba16"><td id="LB[O" class=""><code>id</code></td><td id="Sr]e" class="">INTEGER</td><td id="DOWH" class="">Уникальный идентификатор.</td></tr><tr id="1654328a-5ccc-8073-9efe-c1ae84d5a1f8"><td id="LB[O" class=""><code>user_id</code></td><td id="Sr]e" class="">INTEGER</td><td id="DOWH" class="">Идентификатор пользователя.</td></tr><tr id="1654328a-5ccc-800a-9f52-d853418fc01d"><td id="LB[O" class=""><code>resource_id</code></td><td id="Sr]e" class="">INTEGER</td><td id="DOWH" class="">Идентификатор ресурса.</td></tr><tr id="1654328a-5ccc-80b0-a6d5-f40b7c7adaa9"><td id="LB[O" class=""><code>timestamp</code></td><td id="Sr]e" class="">DATETIME</td><td id="DOWH" class="">Дата взаимодействия.</td></tr></tbody></table><hr id="1654328a-5ccc-80cb-84fb-cfe84153203b"/><h3 id="1654328a-5ccc-8072-802c-d23ddf75db19" class=""><strong>2.2 Пример связей</strong></h3><ul id="1654328a-5ccc-80e4-9aae-c2cd3e5ee7dc" class="bulleted-list"><li style="list-style-type:disc">Один пользователь может взаимодействовать с несколькими ресурсами (связь <code>User_Interactions</code>).</li></ul><ul id="1654328a-5ccc-8022-bba8-f7031ee0c8ab" class="bulleted-list"><li style="list-style-type:disc">Каждый ресурс может быть связан с несколькими тегами.</li></ul><hr id="1654328a-5ccc-8056-b017-f8b302d79fa7"/><h2 id="1654328a-5ccc-8032-b38e-c366450c47b5" class=""><strong>3. Технические детали</strong></h2><h3 id="1654328a-5ccc-80e1-970f-cbb3050a7072" class=""><strong>3.1 Стек технологий</strong></h3><ul id="1654328a-5ccc-8075-998b-d9a5e1ace22a" class="bulleted-list"><li style="list-style-type:disc"><strong>Backend</strong>: Python (Flask/FastAPI), PostgreSQL для хранения данных.</li></ul><ul id="1654328a-5ccc-8098-ab96-de7ca8adbda5" class="bulleted-list"><li style="list-style-type:disc"><strong>Frontend</strong>: HTML/CSS/JavaScript (React для сайта).</li></ul><ul id="1654328a-5ccc-806a-b798-d417ad9da24e" class="bulleted-list"><li style="list-style-type:disc"><strong>Бот</strong>: Telegraf.js (Node.js) или Python-бот через aiogram.</li></ul><ul id="1654328a-5ccc-80b0-a960-daa2e854f766" class="bulleted-list"><li style="list-style-type:disc"><strong>Хостинг</strong>: AWS или Heroku.</li></ul><hr id="1654328a-5ccc-8083-af5a-df91954a7719"/><h3 id="1654328a-5ccc-8029-a89b-e6df65226345" class=""><strong>3.2 API-интеграции</strong></h3><ol type="1" id="1654328a-5ccc-808a-ac12-f82de179430a" class="numbered-list" start="1"><li><strong>OpenAI GPT API</strong>:<ul id="1654328a-5ccc-8030-9245-e8e40bd6e76e" class="bulleted-list"><li style="list-style-type:disc">Используется для анализа текста пользователя и генерации тегов.</li></ul></li></ol><ol type="1" id="1654328a-5ccc-8056-891f-f3bd1bb2ee82" class="numbered-list" start="2"><li><strong>Spoonacular API</strong> (для питания):<ul id="1654328a-5ccc-8033-b039-f63ad086c687" class="bulleted-list"><li style="list-style-type:disc">Рекомендации рецептов и информации о продуктах.</li></ul></li></ol><ol type="1" id="1654328a-5ccc-803d-a043-d096416a64ec" class="numbered-list" start="3"><li><strong>GoodReads API</strong> (для саморазвития):<ul id="1654328a-5ccc-8000-a284-d40980283457" class="bulleted-list"><li style="list-style-type:disc">Информация о книгах и рейтингах.</li></ul></li></ol><hr id="1654328a-5ccc-800d-a9e2-c25fd94e6553"/><h3 id="1654328a-5ccc-806f-bdcc-e5e5cccc4967" class=""><strong>3.3 Логика работы бота</strong></h3><ol type="1" id="1654328a-5ccc-8096-b500-eb28290a011e" class="numbered-list" start="1"><li><strong>Анализ текста</strong>:<ul id="1654328a-5ccc-8097-b47a-c4cd6e78c578" class="bulleted-list"><li style="list-style-type:disc">Пользователь пишет запрос.</li></ul><ul id="1654328a-5ccc-80f4-9e7c-f76ca2f006b6" class="bulleted-list"><li style="list-style-type:disc">GPT API возвращает ключевые слова (теги).</li></ul></li></ol><ol type="1" id="1654328a-5ccc-808e-a339-f67cc085d8b9" class="numbered-list" start="2"><li><strong>Поиск ресурсов</strong>:<ul id="1654328a-5ccc-8064-a1f1-e24016304f89" class="bulleted-list"><li style="list-style-type:disc">Теги используются для фильтрации таблицы <code>Resources</code>.</li></ul><ul id="1654328a-5ccc-8097-8f10-dd9866d4171c" class="bulleted-list"><li style="list-style-type:disc">Возвращаются релевантные ресурсы.</li></ul></li></ol><ol type="1" id="1654328a-5ccc-8093-a941-d67a9e8e4fde" class="numbered-list" start="3"><li><strong>Ответ пользователю</strong>:<ul id="1654328a-5ccc-80e2-ba9d-cc9278d1452f" class="bulleted-list"><li style="list-style-type:disc">Формируется сообщение с описанием и ссылками.</li></ul></li></ol><hr id="1654328a-5ccc-80ef-b6c5-ceeff087ab2f"/><h3 id="1654328a-5ccc-8093-9ce6-f780e9af62e2" class=""><strong>3.4 Хранение данных</strong></h3><ul id="1654328a-5ccc-80d3-bd70-f7fe48bf7021" class="bulleted-list"><li style="list-style-type:disc"><strong>Данные о пользователях</strong>:<ul id="1654328a-5ccc-80db-aa9d-d9382c638cbf" class="bulleted-list"><li style="list-style-type:circle">Анонимизированные идентификаторы.</li></ul><ul id="1654328a-5ccc-80f5-992f-d85a2d9cdfcb" class="bulleted-list"><li style="list-style-type:circle">Хранятся только предпочтения и история взаимодействий.</li></ul></li></ul><ul id="1654328a-5ccc-8034-a360-c94801569318" class="bulleted-list"><li style="list-style-type:disc"><strong>Ресурсы</strong>:<ul id="1654328a-5ccc-80be-b31a-dcf09a041f94" class="bulleted-list"><li style="list-style-type:circle">Локальная база данных, обновляемая из внешних API.</li></ul></li></ul><hr id="1654328a-5ccc-8025-af1e-cee1aeb865ee"/><h3 id="1654328a-5ccc-80b4-afc9-d53059dd80e8" class=""><strong>3.5 Риски и ограничения</strong></h3><ol type="1" id="1654328a-5ccc-80a1-ad73-c79bfb9da682" class="numbered-list" start="1"><li><strong>Низкая скорость ответа</strong>:<ul id="1654328a-5ccc-807f-89f8-dc6561ffc5d1" class="bulleted-list"><li style="list-style-type:disc">Решение: Кеширование популярных запросов.</li></ul></li></ol><ol type="1" id="1654328a-5ccc-80a4-979c-deea9bad1f91" class="numbered-list" start="2"><li><strong>Ошибки классификации тегов</strong>:<ul id="1654328a-5ccc-804e-b636-fd12c82ebbed" class="bulleted-list"><li style="list-style-type:disc">Решение: Улучшение предобучения GPT API.</li></ul></li></ol></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
